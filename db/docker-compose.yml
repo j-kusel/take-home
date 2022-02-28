@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+    db:
+        image: mysql:8.0.28
+        environment:
+            MYSQL_DATABASE: 'spruce'
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        ports:
+            - ${MYSQL_PORT}:3306
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
