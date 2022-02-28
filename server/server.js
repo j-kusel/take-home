@@ -12,9 +12,9 @@ const { typeDefs, resolvers } = require('./schemas');
 
 async function connect() {
     return await mysql.createConnection({
-        host: process.env.MYSQL_HOST, || 'localhost',
-        port: process.env.MYSQL_PORT, || 33066,
-        user: process.env.MYSQL_USER, || 'apollo', 
+        host: process.env.MYSQL_HOST,
+        port: process.env.MYSQL_PORT,
+        user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PASSWORD,
         database: 'spruce',
         Promise: bluebird
